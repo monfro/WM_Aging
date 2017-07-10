@@ -24,7 +24,6 @@ for s = 1;%:numel(subjects);
     nPrescans = 30;
     MEsmoothing = 1; % smooth the prescans before determining weights?
     MEsmoothKernelRatio = 1.2; % size of the smoothing kernel, expressed as a ratio of the voxel size of the functional volumes
-    
     % if nargin < 1
     %     mri_data_dir = uigetdir(cd,'select dir with source files');
     % end
