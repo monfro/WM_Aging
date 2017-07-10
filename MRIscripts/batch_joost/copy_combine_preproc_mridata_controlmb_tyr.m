@@ -1,15 +1,17 @@
 %function copy_combine_preproc_mridata(mri_data_dir,target_dir)
 
 tic
-subjects ={'3017030.06_TYR_S1101','3017030.06_TYR_S2702','3017030.06_TYR_S1101','3017030.06_TYR_S3502','3017030.06_TYR_S3501','3017030.06_TYR_S1402','3017030.06_TYR_S3302','3017030.06_TYR_S1501','3017030.06_TYR_S1302','3017030.06_TYR_S0902','3017030.06_TYR_S2702','3017030.06_TYR_S3401','3017030.06_TYR_S2702','3017030.06_TYR_S3402','3017030.06_TYR_S1102','3017030.06_TYR_S1101','3017030.06_TYR_S1301','3017030.06_TYR_S3301','3017030.06_TYR_S2702','3017030.06_TYR_S1301','3017030.06_TYR_S3401','3017030.06_TYR_S0901','3017030.06_TYR_S3102','3017030.06_TYR_S2902','3017030.06_TYR_S0802','3017030.06_TYR_S0602','3017030.06_TYR_S2901','3017030.06_TYR_S0601','3017030.06_TYR_S1902','3017030.06_TYR_S2202','3017030.06_TYR_S0402','3017030.06_TYR_S2401','3017030.06_TYR_S2201','3017030.06_TYR_S0301','3017030.06_TYR_S2001','3017030.06_TYR_S0101','PILOT4','TYRPILOT3','P02_TYRAGING','PILOT_WMAG_JACOB'};
+subjects ={'S0101','S0102','S0201','S0202','S0301','S0302','S0401','S0402','S0601','S0602','S0701','S0702'...
+    'S0801','S0802','S0901','S0902','S1001','S1002','S1101','S1102','S1201','S1202','S1301','S1302','S1401','S1402'...
+    'S1601','S1602','S1701','S1702','S1901','S1902','S2001','S2002','S2101','S2102','S2201','S2202','S2401','S2402'...
+    'S2601','S2602','S2701','S2702','S2801','S2802','S2901','S2902','S3001','S3002','S3101','S3102','S3301','S3302'...
+    'S3401','S3402','S3501','S3502'};
 
 %      };
 for s = 1;%:numel(subjects);
     dir_root = '/home/control/mirblo/Documents/TYR_MRI_data/';
-    %dir_root = '/home/control/monfro/B_PhD/Tyro_Old/TYR_data/';
-   %dir_root = '\\fileserver.dccn.nl\mirblo$\Documents\Tyrosine_aging\';
-    mri_data_dir = fullfile(dir_root, subjects{s}); %[dir_root, subjects{s}];%
-    target_dir = fullfile(dir_root, subjects{s});% [dir_root, subjects{s}];%
+    mri_data_dir = fullfile(dir_root, sprintf('3017030.06_TYR_%s',subjects{s})); %[dir_root, subjects{s}];%
+    target_dir = fullfile(dir_root, subjects{s});   %adapt to monja's?
     %script_dir = 'home/control/mirblo/Documents/TYR_MRI_data/MRIscripts';
     % some variables
     cleanup_EPIs = true; % clean up EPI folder (just a copy of dicoms, not necessary any more after echo combination

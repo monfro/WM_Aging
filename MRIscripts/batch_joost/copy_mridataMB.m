@@ -2,7 +2,6 @@ function [target_files,target_subdirs,target_subdirs_type] = copy_mridataMB(mri_
 dbstop if error
 range_series_nr = [3 4]; % between which dots can we find the series number?
 
-
 if nargin < 1
     if ispc
         mri_data_dir = uigetdir('\\LAB-MRI007\MRIData-Skyra','select dir with source files');
