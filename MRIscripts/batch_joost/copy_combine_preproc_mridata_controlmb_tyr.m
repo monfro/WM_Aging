@@ -11,7 +11,7 @@ subjects ={'S0101','S0102','S0201','S0202','S0301','S0302','S0401','S0402','S060
 for s = 1;%:numel(subjects);
     dir_root = '/home/control/mirblo/Documents/TYR_MRI_data/';
     mri_data_dir = fullfile(dir_root, sprintf('3017030.06_TYR_%s',subjects{s})); %[dir_root, subjects{s}];%
-    target_dir = fullfile(dir_root, subjects{s});   %adapt to monja's?
+    target_dir = fullfile(dir_root, sprintf('3017030.06_TYR_%s',subjects{s}));   %adapt to monja's?
     %script_dir = 'home/control/mirblo/Documents/TYR_MRI_data/MRIscripts';
     % some variables
     cleanup_EPIs = true; % clean up EPI folder (just a copy of dicoms, not necessary any more after echo combination
