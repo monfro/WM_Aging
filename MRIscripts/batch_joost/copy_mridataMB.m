@@ -122,7 +122,12 @@ end
 [o1,o2,o3] = unique(target_subdirs);
 u_target_dirs = cellfun(@fullfile,repmat({target_dir},size(unique(target_subdirs))),unique(target_subdirs),'UniformOutput',false);
 u_target_dirs_type = target_subdirs_type(o2);
-for i = 1:numel(u_target_dirs); if ~exist(u_target_dirs{i}); mkdir(u_target_dirs{i}); end; end;
+if sum(strcmp(target_subdirs,'T1'))> 0
+    for T1Wmag = 2:3
+        if ~exist(u_target_dirs{T1Wmag}); mkdir(u_target_dirs{T1Wmag}); end; end;
+else 
+    if ~exist(u_target_dirs{2}); mkdir(u_target_dirs{2}); end; 
+end
 target_files = cellfun(@fullfile,repmat({target_dir},size(target_subdirs)),target_subdirs,mri_files,'UniformOutput',false);
 
 %% copy the files
@@ -131,13 +136,24 @@ status = zeros(size(source_files));
 copyline = ['Copying data from ',mri_data_dir,' to ',target_dir];
 fprintf('%s\n',copyline);
 h = waitbar(0,copyline);
-for i = 1:numel(source_files)
+imin = min(find(strcmp(target_subdirs, 'WMAG')));
+imax = max(find(strcmp(target_subdirs, 'WMAG')));
+for i = imin:imax
     status(i) = copyfile(source_files{i},target_files{i});
-    waitbar(i/numel(source_files));
+    waitbar(i+1-imin/length(imin:imax));
 end
+
+T1min = min(find(strcmp(target_subdirs, 'T1')));
+T1max = max(find(strcmp(target_subdirs, 'T1')));
+for i = T1min: T1max
+    status(i) = copyfile(source_files{i},target_files{i});
+    waitbar(i+1-T1min/length(T1min:T1max));
+end
+
 close(h);
 
-if any(status==0)
+
+if any(status(imin:imax)==0)
     disp('error while copying');
     keyboard;
 else
