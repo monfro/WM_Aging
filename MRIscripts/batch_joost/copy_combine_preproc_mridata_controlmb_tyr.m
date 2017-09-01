@@ -1,7 +1,7 @@
 %function copy_combine_preproc_mridata(mri_data_dir,target_dir)
 
 tic
-subjects = {'S0202'};
+subjects = {'S0601'};
 
 %subjects ={'S0101','S0102','S0201','S0202','S0301','S0302','S0401','S0402','S0601','S0602','S0701','S0702'...
 %     'S0801','S0802','S0901','S0902','S1001','S1002','S1101','S1102','S1201','S1202','S1301','S1302','S1401','S1402'...
