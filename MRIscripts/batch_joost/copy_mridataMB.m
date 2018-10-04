@@ -60,7 +60,7 @@ elseif numel(EPI_idx) > numel(u_EPI_echonrs)
         EPI_series = [EPI_series,i*ones(1,max(EPI_echonrs))];%[EPI_series,i*ones(1,max(EPI_echonrs))];
         EPI_series = unique(EPI_series);
         dlg_title = ['EPI session ',num2str(i)];
-        if EPI_nscans(i*ones(1,max(EPI_echonrs))) > 1000
+        if EPI_nscans(i*ones(1,max(EPI_echonrs))) > 900
            EPI_series_names = [EPI_series_names,'Stop'];
 %         elseif EPI_nscans(i*ones(1,max(EPI_echonrs))) > 400 & EPI_nscans(i*ones(1,max(EPI_echonrs))) < 500
 %             EPI_series_names = [EPI_series_names,'Nback'];
