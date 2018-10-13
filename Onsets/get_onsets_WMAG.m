@@ -10,8 +10,8 @@ addpath(datadir)
 addpath(outputdir)
 
 %load drug decoding because it includes subject numbers
-load('M:\B_PhD\Tyro_Old\WMAG\WMAG_data\Others\DrugDecoding_all.mat')
-subs = DrugDecoding.AnalysisWM(:,1);
+load('M:\B_PhD\Tyro_Old\WMAG\WMAG_data\Others\DrugDecoding_Oct2018.mat')
+subs = DrugDecoding.AnalysisWM_mri(:,1);
 n = length(subs);
 
 for i= 1:n
