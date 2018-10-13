@@ -14,9 +14,9 @@ function varargout = ME_Combine_commandline(sourcePath,targetPath,numberOfEchoes
 % JooWeg - DCCN - 20130618
 
 if ispc
-    addpath('H:\common\matlab\multiecho\RB_ME_CombineGui');
+    addpath('H:\common\matlab\multiecho\OldCompatibleWithVBVD_DondersSequence\RB_ME_CombineGui');
 else
-    addpath('/home/common/matlab/multiecho/RB_ME_CombineGui');
+    addpath('/home/common/matlab/multiecho/OldCompatibleWithVBVD_DondersSequence/RB_ME_CombineGui');
 end
 
 %% Initialization %%

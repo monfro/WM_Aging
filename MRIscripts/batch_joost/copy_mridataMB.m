@@ -64,7 +64,9 @@ elseif numel(EPI_idx) > numel(u_EPI_echonrs)
            EPI_series_names = [EPI_series_names,'Stop'];
 %         elseif EPI_nscans(i*ones(1,max(EPI_echonrs))) > 400 & EPI_nscans(i*ones(1,max(EPI_echonrs))) < 500
 %             EPI_series_names = [EPI_series_names,'Nback'];
-        else
+        elseif EPI_nscans(i*ones(1,max(EPI_echonrs))) < 100
+            EPI_series_names = [EPI_series_names,'niet'];
+        else EPI_nscans(i*ones(1,max(EPI_echonrs))) 
             EPI_series_names = [EPI_series_names,'WMAG'];
         end
         %prompt = ['How do you want to name EPI session #',num2str(i),' (containing ',num2str(EPI_nscans((i-1)*max(EPI_echonrs)+1)),' scans)?'];
