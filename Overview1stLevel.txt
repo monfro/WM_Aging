@@ -1,0 +1,40 @@
+Done
+
+without error:
+S0101, S0102	- scan nr check
+S0201, S0202	- scan nr check
+S0301, S0302	- scan nr check
+S0401, S0402	- scan nr check
+S0601, S0602	- scan nr check
+S0701, S0702	- scan nr check
+S0801, S0802	- 
+S0901, S0902	- 
+S1001, S1002	-
+S1101, S1102	- 
+S1201, S1202 	- scan nr checked, but day 1 wrong buttons, behavior corrected
+S1301, S1302	- 
+S1401, S1402	- scan nr check
+S1601, S1602	- scan nr check
+S1701, S1702	- scan nr check
+S1901, S1902	- scan nr check
+S2001, S2002	- scan nr check
+S2101, S2102	- scan nr check
+S2201, S2202	- scan nr check
+S2401, S2402	- scan nr check
+S2601, S2602	- scan nr check
+S2701, S2702	- scan nr check
+S2801, S2802	- scan nr check
+S2901, s2902	- scan nr check, but 02 only 420 files because scanner stopped
+S3001, S3002 	- scan nr check
+S31
+S3301, S3302 	- scan nr check
+S3402		- scan nr check
+S3501, S3502
+
+error:
+s3101 --> only 23 swam files?? why?
+S3402 --> only 24 swam files?? why?
+
+
+run again:
+31, 34
