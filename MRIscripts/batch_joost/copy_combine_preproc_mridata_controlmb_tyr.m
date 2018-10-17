@@ -184,6 +184,7 @@ for s = 1;%:numel(subjects);
         copyfile(t1_newpath,newsegment_t1_path);
         clear matlabbatch
         load example_compsig_job_coreg
+        %load example_compsig_job_coreg
         matlabbatch{1}.dmb{1}.nuisance_regressors{1}.preproc8.channel.vols = {[newsegment_t1_path,',1']};
         % find functional (slice-time corrected, not yet normalized) files
         cd(combined_dir);
@@ -199,7 +200,7 @@ for s = 1;%:numel(subjects);
         end
         
         matlabbatch{5}.dmb{1}.nuisance_regressors{1}.segment_regressors.directory{1}{1} = info_dir; % save compsig regressors to info dir
-        rmfield(matlabbatch{6}.dmb{1}.nuisance_regressors{1}.deriv_mov_pars,'regressor')
+        rmfield(matlabbatch{6}.dmb{1}.nuisance_regressors{1}.deriv_mov_pars,'regressors')
         matlabbatch{6}.dmb{1}.nuisance_regressors{1}.deriv_mov_pars.regressors = {rp_newpath};
         matlabbatch{7}.dmb{1}.nuisance_regressors{1}.combine_regressors.target_dir{1} = info_dir;
         matlabbatch{7}.dmb{1}.nuisance_regressors{1}.combine_regressors.filename = [subject_name,'_rp_rp1stderiv_compsig'];
